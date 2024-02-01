@@ -1,0 +1,154 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.dashboard {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+}
+
+.dashboard-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.dashboard-functionality {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-functionality:hover {
+    background-color: #555;
+}
+
+.container {
+    display: none; /* Initially hide the main container */
+    margin-left: 220px; /* Adjusted to accommodate the dashboard width and create space */
+    margin-right: 20px; /* Added margin to the right to prevent crossing the dashboard */
+}
+
+.title-container {
+    margin-top: 50px;
+    text-align: center; /* Center text within the title-container */
+}
+
+.main-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #FF9D6C, #BB4E75, #834693, #115173);
+    background-size: 400% 400%;
+    color: transparent;
+    -webkit-background-clip: text;
+    animation: gradient 15s ease infinite;
+}
+
+.description {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: transparent;
+    background: linear-gradient(45deg, #FF9D6C, #BB4E75, #834693, #115173);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    animation: gradient 15s ease infinite;
+}
+
+.textarea-container {
+    text-align: center; /* Center text within the textarea-container */
+    margin-top: 20px;
+}
+
+textarea {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    min-height: 200px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.button-container {
+    text-align: center;
+}
+
+.btn-autocorrect,
+.btn-text-to-speech {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-autocorrect,
+.btn-text-to-speech {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-autocorrect:hover,
+.btn-text-to-speech:hover {
+    background-color: #45a049;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 768px) {
+    .dashboard {
+        width: 100%;
+        height: auto;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    textarea{
+        font-size: 16px;
+    }
+
+    .textarea-container {
+        margin-left: 0;
+        text-align: center; /* Center text within the textarea-container on smaller screens */
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    body, html {
+        overflow: hidden; /* Hide both vertical and horizontal scrollbar */
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

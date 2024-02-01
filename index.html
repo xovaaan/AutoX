@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="landing.css"> <!-- Include the landing page stylesheet -->
+    <title>AutoX - Grammarly-Like Editor</title>
+</head>
+<body>
+
+    <div class="dashboard" id="dashboard">
+        <h1 class="dashboard-title">AutoX</h1>
+        <div class="dashboard-functionality" onclick="showLandingPage()">Autocorrect</div>
+    </div>
+
+    <div class="container mt-4 text-center" id="main-container">
+        <!-- Main editor content goes here -->
+        <div class="title-container">
+            <h1 class="main-title">Auto Correction</h1>
+            <p class="description">Your Grammar, Punctuation, and Sentence Structure Assistant</p>
+        </div>
+        <div class="textarea-container">
+            <textarea class="form-control" rows="10" id="editor" placeholder="Type your text here (limit: 2000 words)"></textarea>
+            <div class="button-container">
+                <button onclick="autocorrectText()" class="btn-autocorrect">Autocorrect</button>
+                <button onclick="textToSpeech()" class="btn-text-to-speech">Text to Speech</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="landing-container" id="landing-container">
+        <!-- Landing page content goes here -->
+        <div class="title-container">
+            <h1 class="main-title">AutoX</h1>
+            <p class="description">Your Grammar, Punctuation, and Sentence Structure Assistant</p>
+        </div>
+        <a href="#" onclick="showEditor()" class="start-button">Get Started</a>
+    </div>
+
+    <script src="scripts.js"></script> <!-- Add this at the end of your body section -->
+
+</body>
+</html>
