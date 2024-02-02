@@ -1,30 +1,24 @@
-// textToImage.js
 const apiKey = "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";
-const maxImages = 4; // Number of images to generate for each prompt
+const maxImages = 9; // Update to generate 8 images for each prompt
 let selectedImageNumber = null;
 
-// Function to generate a random number between min and max (inclusive)
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// Function to disable the generate button during processing
 function disableGenerateButton() {
-    document.querySelector(".btn-generate").disabled = true;
+    document.querySelector(".generate").disabled = true;
 }
 
-// Function to enable the generate button after process
 function enableGenerateButton() {
-    document.querySelector(".btn-generate").disabled = false;
+    document.querySelector(".generate").disabled = false;
 }
 
-// Function to clear image grid
 function clearImageGrid() {
     const imageGrid = document.querySelector(".grid");
     imageGrid.innerHTML = "";
 }
 
-// Function to generate images
 async function generateImages() {
     const input = document.querySelector("#prompt").value;
     disableGenerateButton();
@@ -38,7 +32,7 @@ async function generateImages() {
     for (let i = 0; i < maxImages; i++) {
         const randomNumber = getRandomNumber(1, 10000);
         const prompt = `${input} ${randomNumber}`;
-        
+
         const response = await fetch(
             "https://api-inference.huggingface.co/models/prompthero/openjourney",
             {
@@ -71,8 +65,6 @@ async function generateImages() {
 
     selectedImageNumber = null; // Reset selected image number
 }
-
-document.querySelector(".btn-generate").addEventListener('click', generateImages);
 
 function downloadImage(imgUrl, imageNumber) {
     const link = document.createElement("a");
