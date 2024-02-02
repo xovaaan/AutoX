@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="landing.css"> <!-- Include the landing page stylesheet -->
     <link rel="icon" href="images/bookmark.png">
     <title>AutoX</title>
 </head>
@@ -13,26 +13,17 @@
     <div class="dashboard" id="dashboard">
         <h1 class="dashboard-title">AutoX</h1>
         <div class="dashboard-functionality" onclick="showLandingPage()">Autocorrect</div>
+        <div class="dashboard-functionality" onclick="showTextToImagePage()">Text to Image</div>
     </div>
 
     <div class="container mt-4 text-center" id="main-container">
         <!-- Main editor content goes here -->
-        <div class="btn-back-container">
-            <button onclick="goBack()" class="btn-back">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
-                </svg>
-                Back
-            </button>
-        </div>
         <div class="title-container">
             <h1 class="main-title">Auto Correction</h1>
             <p class="description">Your Grammar, Punctuation, and Sentence Structure Assistant</p>
         </div>
         <div class="textarea-container">
-            <textarea class="form-control" rows="10" id="editor" placeholder="Type your text here (limit: 2000 words)" oninput="updateCharacterCount()"></textarea>
-            <div class="character-counter" id="character-counter">(characters/2000)</div>
+            <textarea class="form-control" rows="10" id="editor" placeholder="Type your text here (limit: 2000 words)"></textarea>
             <div class="button-container">
                 <button onclick="autocorrectText()" class="btn-autocorrect">Autocorrect</button>
                 <button onclick="textToSpeech()" class="btn-text-to-speech">Text to Speech</button>
@@ -49,7 +40,7 @@
         <a href="#" onclick="showEditor()" class="start-button">Get Started</a>
     </div>
 
-    <script src="scripts.js"></script>
+    <script src="scripts.js"></script> <!-- Add this at the end of your body section -->
 
 </body>
 </html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="textToImage.css">
+    <title>Text to Image</title>
+</head>
+<body>
+
+    <div class="title-container">
+        <h1 class="main-title">Text to Image</h1>
+    </div>
+
+    <div class="textarea-container">
+        <textarea class="form-control" rows="5" id="prompt" placeholder="Type your prompt here"></textarea>
+        <div class="button-container">
+            <button onclick="generateImages()" class="generate">Generate</button>
+        </div>
+    </div>
+
+    <div class="loading" style="display: none;">
+        Generating images, please wait...
+    </div>
+
+    <div class="grid"></div>
+
+    <script src="textToImage.js"></script>
+
+</body>
+</html>

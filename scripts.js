@@ -120,3 +120,40 @@ function updateCharacterCount() {
     
     counter.className = 'character-counter gradient' + gradientNumber;
 }
+
+// Initialize Typo.js with English dictionary
+var dictionary = new Typo('en_US');
+
+function highlightMisspelledWords() {
+    var editor = document.getElementById('editor');
+    var words = editor.value.split(/\s+/);
+
+    for (var i = 0; i < words.length; i++) {
+        var word = words[i].replace(/[^a-zA-Z]+/g, ''); // Remove non-alphabetic characters
+
+        if (word.length > 0 && !dictionary.check(word)) {
+            // Word is misspelled, apply red color dynamically
+            editor.value = editor.value.replace(new RegExp('\\b' + words[i] + '\\b', 'g'), '<span class="misspelled-word">' + words[i] + '</span>');
+        }
+    }
+
+    // Update the color of misspelled words in real-time
+    var misspelledWords = document.querySelectorAll('.misspelled-word');
+    misspelledWords.forEach(function (element) {
+        element.style.color = 'red';
+    });
+}
+
+// Add this function to handle input event and update misspelled words
+function handleInput() {
+    highlightMisspelledWords();
+    updateCharacterCount(); // Update character count as well
+}
+
+// Attach the handleInput function to the input event of the editor
+document.getElementById('editor').addEventListener('input', handleInput);
+
+function showTextToImagePage() {
+    // Redirect to the Text to Image page
+    window.location.href = 'textToImage.html';
+}
