@@ -1,8 +1,13 @@
 function showLandingPage() {
     var landingContainer = document.getElementById('landing-container');
     var mainContainer = document.getElementById('main-container');
-    
-    // Only hide the landing page, keep the dashboard visible
+    var dashboard = document.getElementById('dashboard');
+
+    // Only hide the landing page, keep the dashboard visible on desktop
+    if (window.innerWidth >= 768 && dashboard) {
+        dashboard.style.display = 'block';
+    }
+
     landingContainer.style.display = 'none';
     mainContainer.style.display = 'block';
 }
@@ -10,12 +15,18 @@ function showLandingPage() {
 function showEditor() {
     var landingContainer = document.getElementById('landing-container');
     var mainContainer = document.getElementById('main-container');
-    
-    // Hide both landing page and dashboard, show the main content
+    var dashboard = document.getElementById('dashboard');
+
+    // Hide landing page and dashboard, show the main content
     landingContainer.style.display = 'none';
     mainContainer.style.display = 'block';
-    document.getElementById('dashboard').style.display = 'block';
+
+    // Check if dashboard exists and screen width is less than or equal to 768px before hiding it
+    if (dashboard && window.innerWidth < 768) {
+        dashboard.style.display = 'none';
+    }
 }
+
 function autocorrectText() {
     var editor = document.getElementById('editor');
     var userText = editor.value;
@@ -71,7 +82,41 @@ function textToSpeech() {
     speechSynthesis.speak(speechUtterance);
 }
 
+function goBack() {
+    var landingContainer = document.getElementById('landing-container');
+    var mainContainer = document.getElementById('main-container');
+    var dashboard = document.getElementById('dashboard');
+
+    // Show landing page and dashboard, hide the main content
+    landingContainer.style.display = 'block';
+    mainContainer.style.display = 'none';
+
+    // Check if dashboard exists and screen width is less than or equal to 768px before showing it
+    if (dashboard && window.innerWidth < 768) {
+        dashboard.style.display = 'none';
+    }
+}
+
 // Helper function to replace text at a specific range
 String.prototype.replaceRange = function (start, end, replacement) {
     return this.substring(0, start) + replacement + this.substring(end);
 };
+
+
+function updateCharacterCount() {
+    var editor = document.getElementById('editor');
+    var counter = document.getElementById('character-counter');
+    
+    var currentCount = editor.value.length;
+    var limit = 2000;
+    
+    // Update character count
+    counter.textContent = '(' + currentCount + '/' + limit + ')';
+    
+    // Apply color-changing effect based on the character count percentage
+    var percentage = (currentCount / limit) * 100;
+    var gradientNumber = Math.ceil(percentage / 10);
+    gradientNumber = gradientNumber > 10 ? 10 : gradientNumber;
+    
+    counter.className = 'character-counter gradient' + gradientNumber;
+}

@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Hide horizontal scrollbar */
+     /* Hide horizontal scrollbar */
 }
 
 .dashboard {
@@ -68,6 +68,32 @@ body {
     margin-top: 20px;
 }
 
+.btn-back-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+   
+    margin-top: 20px; /* Adjusted top margin for more space at the top */
+    margin-left: 50px; /* Added left margin for spacing from the left side */
+}
+
+.btn-back {
+    background-color: #2196F3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.btn-back svg {
+    fill: #fff;
+    margin-right: 5px;
+}
+
 textarea {
     display: block;
     margin: 0 auto;
@@ -78,6 +104,24 @@ textarea {
     padding: 10px;
     font-size: 18px;
 }
+
+.character-counter {
+    margin-top: 30px;
+    margin-bottom: 12px;
+    font-size: 1em;
+}
+
+/* Additional styles for character counter color changing effect */
+.character-counter.gradient1 { color: #1a1919; }
+.character-counter.gradient2 { color: #2c2a2a; }
+.character-counter.gradient3 { color: #3d3b3b; }
+.character-counter.gradient4 { color: #4f4d4d; }
+.character-counter.gradient5 { color: #605e5e; }
+.character-counter.gradient6 { color: #726f6f; }
+.character-counter.gradient7 { color: #837f7f; }
+.character-counter.gradient8 { color: #958c8c; }
+.character-counter.gradient9 { color: #a79a9a; }
+.character-counter.gradient10 { color: #b8a7a7; }
 
 .button-container {
     text-align: center;
@@ -119,6 +163,18 @@ textarea {
     textarea{
         font-size: 16px;
     }
+
+    .btn-back-container {
+        justify-content: flex-start;
+        margin-top: 10px;
+        margin-left: 1px; /* Keep the Back button on the left for mobile devices */
+    }
+
+    .btn-back {
+        margin-top: 10px;
+        margin-left: 20px; /* Add spacing to the left of the button for mobile devices */
+    }
+   
 
     .textarea-container {
         margin-left: 0;
