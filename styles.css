@@ -34,7 +34,7 @@ body {
 
 .container {
     display: none; /* Initially hide the main container */
-    margin-left: 220px; /* Adjusted to accommodate the dashboard width and create space */
+    margin-left: 80px; /* Adjusted to accommodate the dashboard width and create space */
     margin-right: 20px; /* Added margin to the right to prevent crossing the dashboard */
 }
 
@@ -45,7 +45,8 @@ body {
 
 .main-title {
     font-size: 2.5em;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
+    margin-top: 15px;
     background: linear-gradient(45deg, #FF9D6C, #BB4E75, #834693, #115173);
     background-size: 400% 400%;
     color: transparent;
@@ -115,7 +116,8 @@ textarea {
 }
 
 .icons{
-    width: 50px;
+    width: 40px;
+    margin-right: 30px;
 }
 
 .character-counter {
@@ -171,6 +173,11 @@ textarea {
         height: auto;
         position: relative;
         margin-bottom: 20px;
+    }
+
+    .icons{
+        width: 40px;
+        margin-left: 40px;
     }
 
     textarea{
