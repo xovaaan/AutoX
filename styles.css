@@ -105,6 +105,10 @@ textarea {
     font-size: 18px;
 }
 
+.buttons{
+     gap: 30px;
+}
+
 .misspelled-word {
     color: red;
     font-weight: bold;
