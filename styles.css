@@ -34,7 +34,7 @@ body {
 
 .container {
     display: none; /* Initially hide the main container */
-    margin-left: 80px; /* Adjusted to accommodate the dashboard width and create space */
+    margin-left: 200px; /* Adjusted to accommodate the dashboard width and create space */
     margin-right: 20px; /* Added margin to the right to prevent crossing the dashboard */
 }
 
@@ -117,7 +117,7 @@ textarea {
 
 .icons{
     width: 40px;
-    margin-right: 30px;
+    margin-right: 40px;
 }
 
 .character-counter {
