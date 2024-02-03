@@ -69,6 +69,11 @@ textarea {
     cursor: pointer;
 }
 
+.icons{
+    width: 40px;
+    margin-top: 10px;
+}
+
 @media (max-width: 768px) {
     .grid img {
         width: 300px

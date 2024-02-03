@@ -114,6 +114,10 @@ textarea {
     font-weight: bold;
 }
 
+.icons{
+    width: 50px;
+}
+
 .character-counter {
     margin-top: 30px;
     margin-bottom: 12px;
